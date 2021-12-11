@@ -15,6 +15,8 @@
 		406889F52764708A00CB1002 /* PhotoCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406889F42764708A00CB1002 /* PhotoCards.swift */; };
 		406889F72764774000CB1002 /* AppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406889F62764774000CB1002 /* AppointmentView.swift */; };
 		406889FB2765303C00CB1002 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406889FA2765303C00CB1002 /* HomeView.swift */; };
+		406889FD27653DCA00CB1002 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406889FC27653DCA00CB1002 /* DateView.swift */; };
+		406889FF27654B2800CB1002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 406889FE27654B2700CB1002 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		406889F42764708A00CB1002 /* PhotoCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCards.swift; sourceTree = "<group>"; };
 		406889F62764774000CB1002 /* AppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentView.swift; sourceTree = "<group>"; };
 		406889FA2765303C00CB1002 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		406889FC27653DCA00CB1002 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		406889FE27654B2700CB1002 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				406889D32764193B00CB1002 /* PetRemindersApp.swift */,
-				406889D52764193B00CB1002 /* ContentView.swift */,
-				406889E227641AE300CB1002 /* ReminderView.swift */,
-				406889F62764774000CB1002 /* AppointmentView.swift */,
-				406889F42764708A00CB1002 /* PhotoCards.swift */,
-				406889FA2765303C00CB1002 /* HomeView.swift */,
+				40688A012765513200CB1002 /* Views */,
+				40688A002765511B00CB1002 /* Components */,
+				406889FE27654B2700CB1002 /* LaunchScreen.storyboard */,
 				406889D72764193E00CB1002 /* Assets.xcassets */,
 				406889DC2764193E00CB1002 /* Info.plist */,
 				406889D92764193E00CB1002 /* Preview Content */,
@@ -79,6 +81,26 @@
 				406889DA2764193E00CB1002 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		40688A002765511B00CB1002 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				406889F42764708A00CB1002 /* PhotoCards.swift */,
+				406889FC27653DCA00CB1002 /* DateView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		40688A012765513200CB1002 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				406889FA2765303C00CB1002 /* HomeView.swift */,
+				406889D52764193B00CB1002 /* ContentView.swift */,
+				406889F62764774000CB1002 /* AppointmentView.swift */,
+				406889E227641AE300CB1002 /* ReminderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				406889FF27654B2800CB1002 /* LaunchScreen.storyboard in Resources */,
 				406889DB2764193E00CB1002 /* Preview Assets.xcassets in Resources */,
 				406889D82764193E00CB1002 /* Assets.xcassets in Resources */,
 			);
@@ -152,6 +175,7 @@
 			files = (
 				406889F72764774000CB1002 /* AppointmentView.swift in Sources */,
 				406889FB2765303C00CB1002 /* HomeView.swift in Sources */,
+				406889FD27653DCA00CB1002 /* DateView.swift in Sources */,
 				406889D62764193B00CB1002 /* ContentView.swift in Sources */,
 				406889D42764193B00CB1002 /* PetRemindersApp.swift in Sources */,
 				406889F52764708A00CB1002 /* PhotoCards.swift in Sources */,
