@@ -11,6 +11,7 @@
 		406889D62764193B00CB1002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406889D52764193B00CB1002 /* ContentView.swift */; };
 		406889D82764193E00CB1002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406889D72764193E00CB1002 /* Assets.xcassets */; };
 		406889DB2764193E00CB1002 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406889DA2764193E00CB1002 /* Preview Assets.xcassets */; };
+		406889E327641AE300CB1002 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406889E227641AE300CB1002 /* ReminderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		406889D72764193E00CB1002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		406889DA2764193E00CB1002 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		406889DC2764193E00CB1002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		406889E227641AE300CB1002 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				406889D32764193B00CB1002 /* PetRemindersApp.swift */,
 				406889D52764193B00CB1002 /* ContentView.swift */,
+				406889E227641AE300CB1002 /* ReminderView.swift */,
 				406889D72764193E00CB1002 /* Assets.xcassets */,
 				406889DC2764193E00CB1002 /* Info.plist */,
 				406889D92764193E00CB1002 /* Preview Content */,
@@ -140,6 +143,7 @@
 			files = (
 				406889D62764193B00CB1002 /* ContentView.swift in Sources */,
 				406889D42764193B00CB1002 /* PetRemindersApp.swift in Sources */,
+				406889E327641AE300CB1002 /* ReminderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
