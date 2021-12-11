@@ -8,16 +8,9 @@
 import UserNotifications
 import SwiftUI
 
-struct MyReminder{
-    let title: String
-    let date: Date
-}
-
 struct ReminderView: View {
-    @State private var showReminderList = false
     @State private var newReminder = Date()
     @State private var reminderName: String = ""
-    @State var reminderList = [MyReminder?]()
     
     var body: some View {
         VStack {
@@ -84,28 +77,11 @@ struct ReminderView: View {
                         .multilineTextAlignment(.center)
                 }
             })
-            
-            
-                Button(action: {
-                    self.showReminderList.toggle()
-                }, label: {
-                    Text("View All Reminders")
-                            .sheet(isPresented: $showReminderList){
-                                ReminderListView(reminderList: self.reminderList)
-                        }
-                })
-                .padding()
         }
         .padding()
-        
-        
 
     }
-    
-    func addRemList(title: String, date: Date) {
-        let addRem = MyReminder(title: title, date: date)
-        reminderList.append(addRem)
-    }
+
 }
 
 struct ReminderView_Previews: PreviewProvider {

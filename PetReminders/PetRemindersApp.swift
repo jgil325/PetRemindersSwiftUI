@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PetRemindersApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ReminderView()
+            ContentView()
+
         }
+        
     }
 }
