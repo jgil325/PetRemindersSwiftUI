@@ -11,7 +11,7 @@ import SwiftUI
 struct PetRemindersApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ReminderView()
         }
     }
 }

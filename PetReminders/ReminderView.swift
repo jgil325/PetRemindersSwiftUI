@@ -8,8 +8,16 @@
 import UserNotifications
 import SwiftUI
 
+struct MyReminder{
+    let title: String
+    let date: Date
+}
+
 struct ReminderView: View {
+    @State private var showReminderList = false
     @State private var newReminder = Date()
+    @State private var reminderName: String = ""
+    @State var reminderList = [MyReminder?]()
     
     var body: some View {
         VStack {
@@ -23,29 +31,45 @@ struct ReminderView: View {
                 .font(.custom("HelveticaNeue Light", size: 16))
                 .foregroundColor(Color(#colorLiteral(red: 0.63, green: 0.64, blue: 0.7, alpha: 1)))
             
-//            DatePicker("Please enter a date", selection: $newReminder, in: Date.init()...)
-            VStack {
-                DatePicker("", selection: $newReminder, displayedComponents: .hourAndMinute)
+                DatePicker("", selection: $newReminder)
                     .labelsHidden()
                     .datePickerStyle(WheelDatePickerStyle())
-            }
-            
-            Text("What days do you want this reminder to be for?")
+
+            Text("Give this reminder a name")
                 .font(.custom("HelveticaNeue Bold", size: 20))
                 .foregroundColor(Color(#colorLiteral(red: 0.25, green: 0.25, blue: 0.31, alpha: 1)))
             
-            HStack {
-                DaySelect(day: "SU")
-                DaySelect(day: "M")
-                DaySelect(day: "T")
-                DaySelect(day: "W")
-                DaySelect(day: "TH")
-                DaySelect(day: "F")
-                DaySelect(day: "S")
-            }
+            TextField(
+                "Reminder",
+                text: $reminderName
+            )
             .padding()
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            
+            Button(action: {
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])  {
+                    success, error in
+                    if success {
+                        print("Authorization Granted")
+                    } else if let error = error {
+                        print(error.localizedDescription)
+                    }
+                    
+                    let content = UNMutableNotificationContent()
+                    content.title = reminderName
+                    content.subtitle = "From: PetReminder"
+                    content.body = "Your pet needs you!"
+                    content.sound = UNNotificationSound.default
+                    
+                    let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute], from: newReminder)
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+                    let request = UNNotificationRequest(identifier: "notification.id.01", content: content, trigger: trigger)
+                    UNUserNotificationCenter.current().add(request)
+                    
+                    newReminder = Date()
+                    reminderName = ""
+                }
+            }, label: {
                 ZStack {
                     //Rectangle 210
                         RoundedRectangle(cornerRadius: 38)
@@ -61,9 +85,26 @@ struct ReminderView: View {
                 }
             })
             
+            
+                Button(action: {
+                    self.showReminderList.toggle()
+                }, label: {
+                    Text("View All Reminders")
+                            .sheet(isPresented: $showReminderList){
+                                ReminderListView(reminderList: self.reminderList)
+                        }
+                })
+                .padding()
         }
         .padding()
-       
+        
+        
+
+    }
+    
+    func addRemList(title: String, date: Date) {
+        let addRem = MyReminder(title: title, date: date)
+        reminderList.append(addRem)
     }
 }
 
@@ -73,17 +114,3 @@ struct ReminderView_Previews: PreviewProvider {
     }
 }
 
-struct DaySelect: View {
-    var day: String
-    
-    var body: some View {
-        ZStack {
-            //Ellipse 31
-            Circle()
-                .fill(Color(#colorLiteral(red: 0.24705882370471954, green: 0.2549019753932953, blue: 0.30588236451148987, alpha: 1)))
-                .frame(width: 40.7, height: 40.7)
-            
-            Text(day).font(.custom("HelveticaNeue Medium", size: 14)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center)
-        }
-    }
-}
