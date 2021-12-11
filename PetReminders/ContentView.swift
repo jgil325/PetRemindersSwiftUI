@@ -32,7 +32,6 @@ struct ContentView: View {
                         .padding(.trailing)
                         
                 }
-                .frame(width: .infinity)
                 .padding()
                 
                 NavigationLink(
