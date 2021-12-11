@@ -26,9 +26,11 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "person.fill")
+                    Image("luna9")
                         .resizable()
-                        .frame(width: 30, height: 30, alignment: .trailing)
+                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                        .frame(width: 95, height: 95)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                         .padding(.trailing)
                         
                 }
@@ -93,9 +95,11 @@ struct ContentView: View {
                         .padding(.trailing, 40)
                     })
             
+                Spacer()
             }
-        }
             
+
+        }
 
         }
 

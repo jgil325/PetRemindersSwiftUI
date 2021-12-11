@@ -8,7 +8,21 @@
 import SwiftUI
 import SafariServices
 
+struct SFSafariViewWrapper: UIViewControllerRepresentable {
+    let url: URL
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<Self>) -> SFSafariViewController {
+        return SFSafariViewController(url: url)
+    }
+
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SFSafariViewWrapper>) {
+        return
+    }
+}
+
 struct AppointmentView: View {
+    @State private var showSafari: Bool = false
+    
     var body: some View {
         VStack {
             Text("Book an Appointment")
@@ -75,19 +89,27 @@ struct AppointmentView: View {
             }
             .frame(width: 295, height: 74)
             
-            Button(action: , label: {
-                ZStack {
-                //Pay and Book
-                    Text("Pay and Book").font(.custom("Manrope ExtraBold", size: 20)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-
+            ZStack {
                 //Rectangle 3
-                    RoundedRectangle(cornerRadius: 30)
+                RoundedRectangle(cornerRadius: 30)
                     .fill(Color(#colorLiteral(red: 0.3607843220233917, green: 0.40784314274787903, blue: 1, alpha: 1)))
-                    .frame(width: 295, height: 74)
+                    .frame(width: 295, height: 50)
                     .shadow(color: Color(#colorLiteral(red: 0.3803921639919281, green: 0.42352941632270813, blue: 1, alpha: 0.30000001192092896)), radius: 60, x: 8, y: 6)
-                }
+                
+                //Pay and Book
+                Text("Book Now")
+                    .font(.custom("Manrope ExtraBold", size: 20))
+                    .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+
             }
-           Spacer()
+            .padding()
+            .onTapGesture {
+                showSafari.toggle()
+            }
+            .fullScreenCover(isPresented: $showSafari, content: {
+                SFSafariViewWrapper(url: URL(string: "https://connect.allydvm.com/practice/jones_bridge/appointment_request")!)
+            })
+            
         }
     }
 }

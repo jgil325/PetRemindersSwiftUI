@@ -64,17 +64,16 @@ struct ReminderView: View {
                 }
             }, label: {
                 ZStack {
-                    //Rectangle 210
-                        RoundedRectangle(cornerRadius: 38)
-                        .fill(Color(#colorLiteral(red: 0.5568627715110779, green: 0.5921568870544434, blue: 0.9921568632125854, alpha: 1)))
-                        .frame(width: 374, height: 55)
+                    //Rectangle 3
+                    RoundedRectangle(cornerRadius: 30)
+                        .fill(Color(#colorLiteral(red: 0.3607843220233917, green: 0.40784314274787903, blue: 1, alpha: 1)))
+                        .frame(width: 295, height: 50)
+                        .shadow(color: Color(#colorLiteral(red: 0.3803921639919281, green: 0.42352941632270813, blue: 1, alpha: 0.30000001192092896)), radius: 60, x: 8, y: 6)
                     
-                    //SAVE
-                    Text("SAVE")
-                        .font(.custom("HelveticaNeue Medium", size: 14))
-                        .foregroundColor(Color(#colorLiteral(red: 0.96, green: 0.95, blue: 0.98, alpha: 1)))
-                        .tracking(0.7)
-                        .multilineTextAlignment(.center)
+                    //Pay and Book
+                    Text("Save")
+                        .font(.custom("Manrope ExtraBold", size: 20))
+                        .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                 }
             })
         }
