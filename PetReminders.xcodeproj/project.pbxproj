@@ -95,10 +95,10 @@
 		40688A012765513200CB1002 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				406889FA2765303C00CB1002 /* HomeView.swift */,
 				406889D52764193B00CB1002 /* ContentView.swift */,
-				406889F62764774000CB1002 /* AppointmentView.swift */,
+				406889FA2765303C00CB1002 /* HomeView.swift */,
 				406889E227641AE300CB1002 /* ReminderView.swift */,
+				406889F62764774000CB1002 /* AppointmentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
